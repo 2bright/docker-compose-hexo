@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd $(dirname $0)
+
+docker-compose stop
+
+$(dirname $0)/hexo-start

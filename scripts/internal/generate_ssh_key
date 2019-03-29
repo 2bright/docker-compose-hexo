@@ -1,0 +1,9 @@
+#!/bin/bash
+
+ssh_dir=$(dirname $0)/../../ssh
+
+if [ ! -d $ssh_dir ]; then
+  mkdir $ssh_dir
+fi
+
+ssh-keygen -t rsa -b 4096 -C "docker-compose-hexo" -f $ssh_dir/id_rsa -N ""

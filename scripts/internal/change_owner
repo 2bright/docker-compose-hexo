@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd $(dirname $0)
+
+docker-compose run hexo bash -c "chown $(id -u):$(id -g) /work_dir -R"

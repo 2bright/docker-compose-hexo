@@ -1,0 +1,28 @@
+#!/bin/bash
+
+blog_dir=/work_dir/blog
+
+script_dir=$(dirname $0)
+
+if [ ! -d $blog_dir ]; then
+  mkdir $blog_dir
+fi
+
+cd $blog_dir
+
+if [ ! -d ./source ]; then
+  hexo init .
+  cnpm install
+fi
+
+if [ ! -d ./node_modules ]; then
+  cnpm install
+fi
+
+if [ ! -d ./node_modules/hexo-deployer-git ]; then
+  cnpm install hexo-deployer-git --save
+fi
+
+source $script_dir/git_config_user
+
+hexo server

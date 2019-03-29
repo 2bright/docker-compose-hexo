@@ -1,0 +1,12 @@
+version: '3'
+services:
+    hexo:
+        build: ./
+        image: hexo
+        ports:
+            - 4000:4000
+        volumes:
+            - ./:/work_dir
+            - ./ssh:/root/.ssh
+        working_dir: /work_dir/blog
+        command: /work_dir/scripts/internal/init_and_serve_blog
