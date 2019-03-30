@@ -2,7 +2,8 @@
 
 cd $(dirname $0)
 
-docker-compose build
+docker-compose build --force-rm
+
 docker-compose up -d
 
 $(dirname $0)/internal/change_owner
