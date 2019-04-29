@@ -1,3 +1,5 @@
 #!/bin/bash
 
+cd $(dirname $0)/..
+
 docker-compose run --rm hexo bash -c "hexo new \"$1\" && chown $(id -u):$(id -g) /work_dir/blog -R"

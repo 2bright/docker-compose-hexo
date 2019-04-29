@@ -3,8 +3,10 @@ services:
     hexo:
         build: ./
         image: hexo
+        env_file:
+            - .env
         ports:
-            - 4000:4000
+            - ${HEXO_PORT}:4000
         volumes:
             - ./:/work_dir
             - ./ssh:/root/.ssh

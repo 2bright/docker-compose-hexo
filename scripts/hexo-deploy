@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd $(dirname $0)
+cd $(dirname $0)/..
 
 docker-compose run --rm hexo bash -c "/work_dir/scripts/internal/git_config_user && hexo generate && hexo deploy"

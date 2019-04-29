@@ -1,10 +1,4 @@
 #!/bin/bash
 
-script_dir=$(dirname $0)
-
-if [ -f $script_dir/../../.env ]; then
-  source $script_dir/../../.env
-  
-  git config --global user.email "$GIT_USER_EMAIL"
-  git config --global user.name "$GIT_USER_NAME"
-fi
+git config --global user.email "$GIT_USER_EMAIL"
+git config --global user.name "$GIT_USER_NAME"
